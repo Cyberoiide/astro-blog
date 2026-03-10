@@ -4,9 +4,13 @@ import { Button } from "@workspace/ui/components/button"
 
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
-console.log('This runs in your terminal, not the browser!');
+console.log("This runs in your terminal, not the browser!")
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+const { pageTitle } = Astro.props;
 
 ---
+
 <!-- 
 <html lang="en">
   <head>
@@ -29,15 +33,7 @@ console.log('This runs in your terminal, not the browser!');
   </body>
 </html> -->
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>my astro site</h1>
-  </body>
-</html>
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+</BaseLayout>

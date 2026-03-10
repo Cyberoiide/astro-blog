@@ -1,0 +1,10 @@
+---
+interface Props {
+  name: string;
+  greeting?: string;
+}
+
+// Usage: <GreetingHeadline greeting="Howdy" name="Partner" />
+const { greeting, name } = Astro.props;
+---
+<h2>{greeting}, {name}!</h2>
