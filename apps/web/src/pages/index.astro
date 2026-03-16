@@ -1,43 +1,73 @@
 ---
-import "@workspace/ui/globals.css"
+import Layout from "@/layouts/Layout.astro"
+
 import { Button } from "@workspace/ui/components/button"
-
-// Welcome to Astro! Everything between these triple-dash code fences
-// is your "component frontmatter". It never runs in the browser.
-console.log('This runs in your terminal, not the browser!');
-
 ---
-<!-- 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
-  </head>
-  <body>
-    <div class="flex min-h-svh p-6">
-      <div class="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 class="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We've already added the button component for you.</p>
-          <Button client:load className="mt-2">Button</Button>
-        </div>
-      </div>
-    </div>
-  </body>
-</html> -->
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>my astro site</h1>
-  </body>
-</html>
+<Layout pageTitle="Clement Bosle | Portfolio">
+  <div class="relative min-h-svh overflow-hidden bg-background">
+    <div class="portfolio-gradient fixed inset-0 -z-20"></div>
+    <div class="portfolio-noise pointer-events-none fixed inset-0 -z-10"></div>
+
+    <!-- <CoffeeScene client:load /> -->
+
+    <main class="relative z-20 flex min-h-svh items-center p-6 md:p-12">
+      <div class="pointer-events-none select-none">
+        <p class="mb-12 text-xs font-medium tracking-[0.3em] text-foreground/75 uppercase md:text-sm">
+          Platform engineer and music enthusiast based in Paris, France.
+        </p>
+        <h1 class="portfolio-hero text-foreground">
+          Clément<br />Bosle
+        </h1>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<!-- <style>
+  .portfolio-gradient {
+    background: linear-gradient(125deg, #9fc0f0, #f4f7ff, #f7e8a5, #9fc0f0);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+  }
+
+  .portfolio-noise {
+    opacity: 0.11;
+    background-image: radial-gradient(circle at 20% 20%, rgb(0 0 0 / 14%) 0.45px, transparent 0.45px);
+    background-size: 3px 3px;
+    mix-blend-mode: multiply;
+  }
+
+  .portfolio-hero {
+    font-family: var(--font-mono);
+    font-size: clamp(3.4rem, 14vw, 11rem);
+    line-height: 0.82;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+  }
+
+  .portfolio-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--foreground);
+    transition: opacity 180ms ease;
+  }
+
+  .portfolio-link:hover {
+    opacity: 0.65;
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style> -->

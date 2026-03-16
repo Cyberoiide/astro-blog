@@ -1,5 +1,9 @@
 ---
 import "@workspace/ui/globals.css"
+
+import NavBarClient from "@/components/NavBar.tsx"
+
+const { pageTitle = "Clément Bosle" } = Astro.props
 ---
 
 <html lang="en">
@@ -7,9 +11,11 @@ import "@workspace/ui/globals.css"
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
   </head>
   <body>
+    <NavBarClient client:load />
     <slot />
   </body>
 </html>
