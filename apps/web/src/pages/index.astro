@@ -1,73 +1,60 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-
-import { Button } from "@workspace/ui/components/button"
 ---
 
-<Layout pageTitle="Clement Bosle | Portfolio">
-  <div class="relative min-h-svh overflow-hidden bg-background">
-    <div class="portfolio-gradient fixed inset-0 -z-20"></div>
-    <div class="portfolio-noise pointer-events-none fixed inset-0 -z-10"></div>
+<Layout pageTitle="Clément Bosle">
+  <main class="mx-auto w-full max-w-4xl px-8 py-8 md:px-16 md:py-20">
 
-    <!-- <CoffeeScene client:load /> -->
+    <div class="flex min-h-[calc(60svh-72px)] items-center justify-between">
 
-    <main class="relative z-20 flex min-h-svh items-center p-6 md:p-12">
-      <div class="pointer-events-none select-none">
-        <p class="mb-12 text-xs font-medium tracking-[0.3em] text-foreground/75 uppercase md:text-sm">
-          Platform engineer and music enthusiast based in Paris, France.
+      <div class="flex flex-col gap-8">
+
+        <p class="text-xs font-medium tracking-widest text-blue-gray-400">
+          Platform engineer &amp; music enthusiast - Paris, France
         </p>
-        <h1 class="portfolio-hero text-foreground">
+
+        <h1 class="hero-name select-none">
           Clément<br />Bosle
         </h1>
+
+        <div class="flex items-center gap-5">
+          <div class="h-px w-10 bg-blue-gray-300"></div>
+          <span class="text-xs tracking-widest text-blue-gray-400 uppercase">2026</span>
+        </div>
+
       </div>
-    </main>
-  </div>
+
+      <div class="hidden items-center md:flex">
+        <figure class="cat-frame">
+          <img
+            src="/cat.jpg"
+            alt="My cat"
+            class="h-full w-full object-cover"
+          />
+        </figure>
+      </div>
+
+    </div>
+
+  </main>
 </Layout>
 
-<!-- <style>
-  .portfolio-gradient {
-    background: linear-gradient(125deg, #9fc0f0, #f4f7ff, #f7e8a5, #9fc0f0);
-    background-size: 400% 400%;
-    animation: gradientMove 15s ease infinite;
-  }
-
-  .portfolio-noise {
-    opacity: 0.11;
-    background-image: radial-gradient(circle at 20% 20%, rgb(0 0 0 / 14%) 0.45px, transparent 0.45px);
-    background-size: 3px 3px;
-    mix-blend-mode: multiply;
-  }
-
-  .portfolio-hero {
+<style>
+  .hero-name {
     font-family: var(--font-mono);
-    font-size: clamp(3.4rem, 14vw, 11rem);
-    line-height: 0.82;
-    letter-spacing: -0.045em;
-    text-transform: uppercase;
-  }
-
-  .portfolio-link {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: clamp(4.5rem, 17vw, 5rem);
+    font-weight: 800;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
     color: var(--foreground);
-    transition: opacity 180ms ease;
+    text-transform: uppercase;
   }
 
-  .portfolio-link:hover {
-    opacity: 0.65;
+  .cat-frame {
+    width: 220px;
+    height: 280px;
+    outline: 1px solid var(--border);
+    overflow: hidden;
+    background-color: var(--muted);
   }
-
-  @keyframes gradientMove {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-</style> -->
+</style>
