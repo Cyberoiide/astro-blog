@@ -1,5 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+
+import Dither from '@workspace/ui/components/Dither';
+
 ---
 
 <Layout pageTitle="Clément Bosle">
@@ -24,16 +27,19 @@ import Layout from "@/layouts/Layout.astro"
 
       </div>
 
-      <div class="hidden items-center md:flex">
-        <figure class="cat-frame">
-          <img
-            src="/cat.jpg"
-            alt="My cat"
-            class="h-full w-full object-cover"
-          />
-        </figure>
+      <div class="hidden items-center md:flex" style="width: 50%; height: 600px; position: relative;">
+        <Dither
+          client:load
+          waveColor={[0.5, 0.5, 0.5]}
+          disableAnimation={false}
+          enableMouseInteraction
+          mouseRadius={0.3}
+          colorNum={4}
+          waveAmplitude={0.3}
+          waveFrequency={3}
+          waveSpeed={0.05}
+        />
       </div>
-
     </div>
 
   </main>
