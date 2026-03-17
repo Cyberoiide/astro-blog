@@ -8,26 +8,25 @@ import Dither from '@workspace/ui/components/Dither';
 <Layout pageTitle="Clément Bosle">
   <main class="mx-auto w-full max-w-4xl px-8 py-8 md:px-16 md:py-20">
 
-    <div class="flex min-h-[calc(60svh-72px)] items-center justify-between">
+    <div class="flex min-h-[calc(60svh-72px)] items-center justify-between gap-12">
 
-      <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-6 max-w-sm">
 
-        <p class="text-xs font-medium tracking-widest text-blue-gray-400">
-          Platform engineer &amp; music enthusiast - Paris, France
-        </p>
-
-        <h1 class="hero-name select-none">
-          Clément<br />Bosle
+        <h1 class="text-4xl font-black leading-tight text-foreground md:text-5xl">
+          Hey, I'm Clément. <br>I like to build products and make music.
         </h1>
 
-        <div class="flex items-center gap-5">
-          <div class="h-px w-10 bg-blue-gray-300"></div>
-          <span class="text-xs tracking-widest text-blue-gray-400 uppercase">2026</span>
+        <p class="text-sm leading-relaxed text-blue-gray-500">
+          Currently, I'm working as a platform engineer at Sia, in Paris, France.
+        </p>
+
+        <div class="flex items-center gap-6">
+          put some socials here
         </div>
 
       </div>
 
-      <div class="hidden items-center md:flex" style="width: 50%; height: 600px; position: relative;">
+      <div class="hidden items-center md:flex" style="width: 50%; height: 500px; position: relative;">
         <Dither
           client:load
           waveColor={[0.5, 0.5, 0.5]}
