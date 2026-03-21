@@ -1,0 +1,27 @@
+---
+import "@workspace/ui/globals.css"
+
+import NavBarClient from "@/components/NavBar.tsx"
+import Footer from "@/components/Footer.astro"
+
+const { pageTitle = "Clément Bosle" } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <NavBarClient client:load />
+
+    <main class="mx-auto w-full max-w-4xl px-8 py-8 md:px-16 md:py-20">
+      <slot />
+    </main>
+    
+    <Footer />
+  </body>
+</html>

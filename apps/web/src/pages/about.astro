@@ -1,32 +1,85 @@
 ---
-console.log("This runs in your terminal, not the browser!")
+import Layout from "@/layouts/Layout.astro"
+import Stack from "@/components/Stack.astro"
+import ExperienceItem from "@/components/ExperienceItem.astro"
+import AboutTitle from "@/components/AboutTitle.astro"
+
+const pageTitle = "About — Clément Bosle"
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>About Me</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+<Layout pageTitle={pageTitle}>
 
-    <h1>My Astro Site</h1>
-    <h1>About Me</h1>
-    <h2>... and my new Astro site!</h2>
+  <div class="flex flex-col gap-16 py-4">
 
-    <p>
-      I am working through Astro's introductory tutorial. This is the second
-      page on my website, and it's the first one I built myself!
-    </p>
+    <!-- Header -->
+    <div class="flex flex-col gap-4">
+      <AboutTitle blockTitle="About" />
+      <h1 class="text-4xl font-black leading-tight text-foreground md:text-5xl">
+        Clément Bosle
+      </h1>
+      <p class="text-sm leading-relaxed text-muted-foreground max-w-lg">
+        Platform engineer in Paris. I build the infrastructure other engineers build on.
+      </p>
+    </div>
 
-    <p>
-      This site will update as I complete more of the tutorial, so keep checking
-      back and see how my journey is going!
-    </p>
-  </body>
-</html>
+    <!-- Bio -->
+    <div class="flex flex-col gap-4 border-t border-border pt-10">
+      <AboutTitle blockTitle="Bio" />
+      <div class="flex flex-col gap-3">
+        <p class="text-sm leading-relaxed text-muted-foreground">
+          I love it when the development process is so smooth that I can focus on building the best solution to the problem at hand, 
+          without having to worry about the underlying infrastructure. 
+          It's also so cool to build in the first place.
+        </p>
+        <p class="text-sm leading-relaxed text-muted-foreground">
+          Outside of work I (used to) read a lot, write here occasionally, and spending a lot of time learning and building stuff.
+        </p>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="flex flex-col gap-6 border-t border-border pt-10">
+      <AboutTitle blockTitle="Experience" />
+      <div class="flex flex-col gap-6">
+        <ExperienceItem
+          company="Sia"
+          role="Platform Engineer"
+          period="Sept. 2025 - present"
+          description="Internal developer platforms, CI/CD pipelines, Kubernetes."
+        />
+        <ExperienceItem
+          company="Syncsquads"
+          role="Co-Founder & Founding Engineer"
+          period="Jan.2026 - Present"
+          description="Building Syncsquads, a social app for ravers to find friends to go to festivals with."
+        />
+        <ExperienceItem
+          company="Quiet Mind"
+          role="Tech Lead"
+          period="Dec. 2024 - March 2026"
+          description="Built DarkFindR, a CTI tool to find leaked data on the dark web."
+        />
+      </div>
+    </div>
+
+    <!-- <div class="flex flex-col gap-4 border-t border-border pt-10">
+      <AboutTitle blockTitle="Stack" />
+      <Stack tags={["k8s", "Python", "Docker", "Terragrunt", "Helm", "Gitlab CI/CD", "Linux", "zsh", "AWS", "GCP", "TypeScript", "Rust (learning Axum)", "RabbitMQ", "Dokploy", "Scaleway"]} />
+    </div>
+  </div> -->
+
+    <!-- Experience -->
+    <div class="flex flex-col gap-6 border-t border-border pt-10">
+      <AboutTitle blockTitle="Education" />
+        <div class="flex flex-col gap-6">
+          <ExperienceItem
+            company="University of Technology of Troyes"
+            role="Networks & Telecoms / Cybersecurity / Computer Science"
+            period="Sept. 2019 - March 2026"
+            description="Was pretty cool but learned much more outside of it"
+          />
+        </div>
+      </div>
+    </div>
+
+</Layout>

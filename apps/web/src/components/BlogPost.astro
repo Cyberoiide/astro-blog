@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string
+  url: string
+  pubDate?: string | Date
+  description?: string
+}
+
+const { title, url, pubDate, description } = Astro.props
+const formattedDate = pubDate
+  ? new Date(pubDate).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric" })
+  : undefined
+---
+
+<a href={url} class="group flex flex-col gap-1 border-l border-border pl-5 hover:border-foreground transition-colors">
+  <div class="flex items-baseline justify-between gap-4">
+    <span class="text-sm font-semibold text-foreground group-hover:underline underline-offset-4">{title}</span>
+    {formattedDate && (
+      <span class="font-mono text-xs text-blue-gray-500 shrink-0">{formattedDate}</span>
+    )}
+  </div>
+  {description && (
+    <p class="text-xs leading-relaxed text-muted-foreground">{description}</p>
+  )}
+</a>
