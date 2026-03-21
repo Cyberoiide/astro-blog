@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 
-import Dither from '@workspace/ui/components/Dither';
+import FaultyTerminal from '@workspace/ui/components/FaultyTerminal';
 
 ---
 
@@ -13,7 +13,7 @@ import Dither from '@workspace/ui/components/Dither';
       <div class="flex flex-col gap-6 max-w-sm">
 
         <h1 class="text-4xl font-black leading-tight text-foreground md:text-5xl">
-          Hey, I'm Clément. <br>I like to build products and make music.
+          Hey, I'm Clément. <br>I blablablabla.
         </h1>
 
         <p class="text-sm leading-relaxed text-blue-gray-500">
@@ -26,17 +26,26 @@ import Dither from '@workspace/ui/components/Dither';
 
       </div>
 
-      <div class="hidden items-center md:flex" style="width: 50%; height: 500px; position: relative;">
-        <Dither
+      <div class="hidden items-center md:flex" style="width: 100%; height: 500px; position: relative;">
+        <FaultyTerminal
           client:load
-          waveColor={[0.5, 0.5, 0.5]}
-          disableAnimation={false}
-          enableMouseInteraction
-          mouseRadius={0.3}
-          colorNum={4}
-          waveAmplitude={0.3}
-          waveFrequency={3}
-          waveSpeed={0.05}
+          scale={2.3}
+          gridMul={[2, 1]}
+          digitSize={1.9}
+          timeScale={2.4}
+          pause={false}
+          scanlineIntensity={0.5}
+          glitchAmount={1}
+          flickerAmount={1}
+          noiseAmp={1}
+          chromaticAberration={0}
+          dither={0}
+          curvature={0.12}
+          tint="#A7EF9E"
+          mouseReact
+          mouseStrength={1.2}
+          pageLoadAnimation
+          brightness={0.7}
         />
       </div>
     </div>

@@ -1,22 +1,24 @@
 ---
+import "@workspace/ui/globals.css"
+
+import Layout from "@/layouts/Layout.astro"
+import BlogPost from "@/components/BlogPost.astro"
+
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true })
+)
+const pageTitle = "Blog Page"
 
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Blog shit</title>
-  </head>
-<body>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-
-  <h1>My Astro Site</h1>
+<Layout pageTitle={pageTitle}>
   <h1>My Astro Learning Blog</h1>
   <p>This is where I will post about my journey learning Astro.</p>
-</body>
-</html>
+  <ul>
+    {
+      allPosts.map((post: any) => (
+        <BlogPost title={post.frontmatter.title} url={post.url} />
+      ))
+    }
+  </ul>
+</Layout>
