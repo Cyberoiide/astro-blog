@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 import Stack from "@/components/Stack.astro"
 import ExperienceItem from "@/components/ExperienceItem.astro"
+import AboutTitle from "@/components/AboutTitle.astro"
 
 const pageTitle = "About — Clément Bosle"
 ---
@@ -12,7 +13,7 @@ const pageTitle = "About — Clément Bosle"
 
     <!-- Header -->
     <div class="flex flex-col gap-4">
-      <span class="font-mono text-xs uppercase tracking-widest text-blue-gray-500">About</span>
+      <AboutTitle blockTitle="About" />
       <h1 class="text-4xl font-black leading-tight text-foreground md:text-5xl">
         Clément Bosle
       </h1>
@@ -23,7 +24,7 @@ const pageTitle = "About — Clément Bosle"
 
     <!-- Bio -->
     <div class="flex flex-col gap-4 border-t border-border pt-10">
-      <span class="font-mono text-xs uppercase tracking-widest text-blue-gray-500">Bio</span>
+      <AboutTitle blockTitle="Bio" />
       <div class="flex flex-col gap-3 max-w-lg">
         <p class="text-sm leading-relaxed text-muted-foreground">
           I think a lot about what makes systems easy to change and hard to break. My work sits somewhere between infra and product — close enough to both that neither team fully claims me.
@@ -36,7 +37,7 @@ const pageTitle = "About — Clément Bosle"
 
     <!-- Experience -->
     <div class="flex flex-col gap-6 border-t border-border pt-10">
-      <span class="font-mono text-xs uppercase tracking-widest text-blue-gray-500">Experience</span>
+      <AboutTitle blockTitle="Experience" />
       <div class="flex flex-col gap-6">
         <ExperienceItem
           company="Sia"
