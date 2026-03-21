@@ -25,12 +25,12 @@ const pageTitle = "About — Clément Bosle"
     <!-- Bio -->
     <div class="flex flex-col gap-4 border-t border-border pt-10">
       <AboutTitle blockTitle="Bio" />
-      <div class="flex flex-col gap-3 max-w-lg">
+      <div class="flex flex-col gap-3">
         <p class="text-sm leading-relaxed text-muted-foreground">
           I think a lot about what makes systems easy to change and hard to break. My work sits somewhere between infra and product — close enough to both that neither team fully claims me.
         </p>
         <p class="text-sm leading-relaxed text-muted-foreground">
-          Outside of work I read a lot, write here occasionally, and spend too much time thinking about tools.
+          Outside of work I (used to) read a lot, write here occasionally, and spending a lot of time learning and building stuff.
         </p>
       </div>
     </div>
@@ -42,21 +42,22 @@ const pageTitle = "About — Clément Bosle"
         <ExperienceItem
           company="Sia"
           role="Platform Engineer"
-          period="2023 — present"
-          description="Internal developer platforms, CI/CD pipelines, Kubernetes. Product teams are the customer."
+          period="Sept. 2025 - present"
+          description="Internal developer platforms, CI/CD pipelines, Kubernetes."
         />
         <ExperienceItem
-          company="Previous Role"
-          role="Role Title"
-          period="20XX — 20XX"
-          description="Placeholder — update with your actual experience."
+          company="Quiet Mind"
+          role="Tech Lead"
+          period="Dec. 2024 - March 2026"
+          description="Built DarkFindR, a CTI tool to find leaked data on the dark web."
         />
       </div>
     </div>
 
-    <!-- Stack -->
-    <Stack tags={["Go", "TypeScript", "Kubernetes", "Terraform", "Helm", "ArgoCD", "GitHub Actions", "Prometheus", "Linux", "Bash"]} />
-
+    <div class="flex flex-col gap-4 border-t border-border pt-10">
+      <AboutTitle blockTitle="Stack" />
+      <Stack tags={["Go", "TypeScript", "Kubernetes", "Terraform", "Helm", "ArgoCD", "GitHub Actions", "Prometheus", "Linux", "Bash"]} />
+    </div>
   </div>
 
 </Layout>
