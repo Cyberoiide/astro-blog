@@ -1,0 +1,18 @@
+---
+interface Props {
+  tags: string[]
+}
+
+const { tags } = Astro.props
+---
+
+<div class="flex flex-col gap-4 border-t border-border pt-10">
+  <span class="font-mono text-xs uppercase tracking-widest text-blue-gray-500">Stack</span>
+  <div class="flex flex-wrap gap-2">
+    {tags.map((tag) => (
+      <span class="font-mono text-xs px-2 py-1 rounded bg-muted text-muted-foreground border border-border">
+        {tag}
+      </span>
+    ))}
+  </div>
+</div>

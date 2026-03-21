@@ -1,0 +1,19 @@
+---
+interface Props {
+  company: string
+  role: string
+  period: string
+  description: string
+}
+
+const { company, role, period, description } = Astro.props
+---
+
+<div class="flex flex-col gap-1 border-l border-border pl-5">
+  <div class="flex items-baseline justify-between gap-4">
+    <span class="text-sm font-semibold text-foreground">{company}</span>
+    <span class="font-mono text-xs text-blue-gray-500 shrink-0">{period}</span>
+  </div>
+  <span class="text-sm text-muted-foreground">{role}</span>
+  <p class="text-xs leading-relaxed text-muted-foreground mt-1">{description}</p>
+</div>
